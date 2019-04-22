@@ -15,4 +15,4 @@ This Ui sample is taken UpLabs from (https://www.uplabs.com/posts/furniture-app-
 Visit (https://www.mausamrayamajhi.com.np/)
 
 ## Ecommerce
- <img height="480px" src="screenshots/one.jpg">      <img height="480px" src="screenshots/two.jpg">   <img height="480px" src="screenshots/three.jpg">
+ <img height="480px" src="screenshots/one.jpg">  &nbsp; &nbsp; <img height="480px" src="screenshots/two.jpg">  &nbsp; &nbsp; <img height="480px" src="screenshots/three.jpg">
