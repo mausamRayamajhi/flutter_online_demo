@@ -9,7 +9,9 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Online',
       home: Online(),
-      theme: ThemeData(primaryColor: Color(0xFFDC2F2E), fontFamily: 'Oxygen'),
+      theme: ThemeData(
+        primaryColor: Color(0xFFDC2F2E),
+         fontFamily: 'Oxygen', ),
     );
   }
 }

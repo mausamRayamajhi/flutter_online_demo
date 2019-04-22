@@ -2,10 +2,10 @@ import 'package:flutter/material.dart';
 import '../icons/my_flutter_app_icons.dart';
 
 final List categories = [
-  {'image': 'assets/images/chair.jpg', 'name': 'Chair', 'available': '101'},
-  {'image': 'assets/images/sofa.jpg', 'name': 'Sofa', 'available': '0'},
-  {'image': 'assets/images/table.jpg', 'name': 'Table', 'available': '23'},
-  {'image': 'assets/images/bed.png', 'name': 'Bed', 'available': '0'}
+  {'image': 'assets/images/categories/chair.jpg', 'name': 'Chair', 'available': '101'},
+  {'image': 'assets/images/categories/sofa.jpg', 'name': 'Sofa', 'available': '0'},
+  {'image': 'assets/images/categories/table.jpg', 'name': 'Table', 'available': '23'},
+  {'image': 'assets/images/categories/bed.png', 'name': 'Bed', 'available': '0'}
 ];
 
 class HomeTopSection extends StatelessWidget {
@@ -23,7 +23,7 @@ class HomeTopSection extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: <Widget>[
                 Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 25.0),
+                  padding: const EdgeInsets.symmetric(horizontal: 15.0),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: <Widget>[
@@ -159,7 +159,7 @@ var buildTopSectionOne = Row(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: <Widget>[
         Text(
-          'Holla, Marshall',
+          'Hello, Mausam',
           style: TextStyle(color: Colors.white, fontSize: 20.0),
         ),
         SizedBox(
