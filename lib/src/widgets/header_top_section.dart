@@ -3,7 +3,7 @@ import '../icons/my_flutter_app_icons.dart';
 
 final List categories = [
   {'image': 'assets/images/chair.jpg', 'name': 'Chair', 'available': '101'},
-  {'image': 'assets/images/sofa.jpg', 'name': 'Sofa', 'available': '45'},
+  {'image': 'assets/images/sofa.jpg', 'name': 'Sofa', 'available': '0'},
   {'image': 'assets/images/table.jpg', 'name': 'Table', 'available': '23'},
   {'image': 'assets/images/bed.png', 'name': 'Bed', 'available': '0'}
 ];
@@ -16,61 +16,114 @@ class HomeTopSection extends StatelessWidget {
         Stack(
           children: <Widget>[
             Container(
-              height: 300.0,
+              height: 295.0,
               color: Theme.of(context).primaryColor,
             ),
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 25.0),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: <Widget>[
-                  SizedBox(
-                    height: 45.0,
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: <Widget>[
+                Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 25.0),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: <Widget>[
+                      SizedBox(
+                        height: 50.0,
+                      ),
+                      buildTopSectionOne,
+                      SizedBox(
+                        height: 30.0,
+                      ),
+                      buildInputBox(context),
+                      SizedBox(
+                        height: 20.0,
+                      ),
+                      Text(
+                        'Categories',
+                        style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 22.0,
+                            fontWeight: FontWeight.normal),
+                      ),
+                    ],
                   ),
-                  buildTopSectionOne,
-                  SizedBox(
-                    height: 30.0,
-                  ),
-                  buildInputBox(context),
-                  SizedBox(
-                    height: 30.0,
-                  ),
-                  Text(
-                    'Categories',
-                    style: TextStyle(
-                        color: Colors.white,
-                        fontSize: 22.0,
-                        fontWeight: FontWeight.normal),
-                  ),
-                ],
-              ),
+                ),
+                SizedBox(
+                  height: 5.0,
+                ),
+                buildCategoriesBox(context),
+              ],
             ),
-
-
-            /*
-        * I HAVE PUT LIST OF CATEGORIES HERE BUT DID NOT WORK
-        * FIX IT 
-        */
-
-
           ],
         ),
-        
-        
-        /*
-        * I HAVE TIRED TO PUT IT HERE TOO .
-        * MAY BE THERE IS ERROR IN MY CODE
-         */
-      
-      
       ],
     );
   }
 }
 
+var buildCategoriesBox = (context) => Container(
+      height: 130.0,
+      width: double.infinity,
+      //color: Colors.black,
+      child: ListView.builder(
+          itemCount: categories.length,
+          scrollDirection: Axis.horizontal,
+          itemBuilder: (BuildContext contex, int index) =>Padding(
+            padding: EdgeInsets.symmetric(vertical:15.0,horizontal: 5.0),
+            child:Card(
+              elevation: 10.0,
+              child: Container(
+                width: 100.0,
+                //color: Colors.yellow,
+                child: Stack(
+                  overflow: Overflow.visible,
+                  alignment: Alignment.center,
+                  children: <Widget>[
+                    Column(
+                      mainAxisSize: MainAxisSize.min,
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: <Widget>[
+                        Image.asset(
+                          categories[index]['image'],
+                          fit: BoxFit.fill,
+                          height: 40.0,
+                        ),
+                      
+                        Text(
+                          categories[index]['name'],
+                          style: TextStyle(fontSize: 15.0),
+                        )
+                      ],
+                    ),
+                    int.parse(categories[index]['available']) > 0
+                        ? Positioned(
+                            top: 10.0,
+                            right: -10.0,
+                            child: Container(
+                              padding: EdgeInsets.symmetric(
+                                  horizontal: 10.0, vertical: 2.0),
+                              decoration: BoxDecoration(
+                                  borderRadius:
+                                      BorderRadius.all(Radius.circular(30.0)),
+                                  color: Theme.of(context).primaryColor,
+                                  border: Border.all(
+                                      color: Colors.white, width: 2.0)),
+                              child: Text(
+                                categories[index]['available'],
+                                style: TextStyle(color: Colors.white),
+                              ),
+                            ),
+                          )
+                        : SizedBox()
+                  ],
+                ),
+              )) ,) ),
+    );
+
 var buildInputBox = (context) => Material(
       elevation: 7.0,
-      borderRadius: BorderRadius.all(Radius.circular(10.0)),
+      borderRadius: BorderRadius.all(Radius.circular(5.0)),
       child: Container(
         child: Row(
           children: <Widget>[
